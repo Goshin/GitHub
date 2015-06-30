@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.octoshape.android.octocastplayer"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="20"/>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
+    <application
+		android:icon="@drawable/octoshape"
+		android:label="@string/app_name"
+		android:theme="@style/Theme.AppCompat"
+		android:name="CastApplication"
+		android:allowBackup="true">
+        <meta-data
+       android:name="com.google.android.gms.version"
+       android:value="@integer/google_play_services_version" />
+        
+		<activity
+			android:name="com.octoshape.android.octocastplayer.CastActivity"
+            android:label="@string/app_name"
+			android:screenOrientation="landscape"
+			android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<service android:name="com.octoshape.android.service.StreamService"
+			android:process=":OctoProc"/>
+    </application>
+</manifest>

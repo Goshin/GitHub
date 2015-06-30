@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- List of streams we know of -->
+    <string-array name="pga">
+        <item>http://test.octoshape.com/demo/fb/index.html</item>
+        <item>octoshape://streams.octoshape.net/demo/live/pga/abr</item>
+    </string-array>
+    <string-array name="nascar">
+        <item>http://streams.octoshape.net/streams/nascar</item>
+        <item>octoshape://streams.octoshape.net/demo/live/nascar/abr</item>
+    </string-array>
+    <!-- This creates a list of all streams -->
+    <string-array name="allstreams">
+        <item>@array/nascar</item>
+        <item>@array/pga</item>
+        </string-array>
+</resources>

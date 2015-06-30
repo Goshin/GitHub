@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">OctoshapeDemo</string>
+    <string name="background_Image">Octoshape Banner</string>
+    <string name="text_Timer">00:00 / 00:00</string>
+    <string name="button_Fullscreen">Toggle Fullscreen</string>
+    <string name="button_Play">Play / Pause</string>
+    <string name="backgroundImage">Octoshape Logo</string>
+	<string name="main_no_items">No streams to display</string>
+
+</resources>

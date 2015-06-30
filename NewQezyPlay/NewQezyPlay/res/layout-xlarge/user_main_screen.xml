@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#666666"
+    android:orientation="vertical" >
+ 
+    <RelativeLayout
+        android:id="@+id/videoSurfaceContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@+drawable/layout_shape" >
+<!-- 
+        <ImageView
+            android:id="@+id/previewScreenImage"
+            android:layout_width="950dp"
+            android:layout_height="550dp"
+            android:background="@drawable/previewscreen" /> -->
+
+        <FrameLayout
+            android:id="@+id/PreviewFrame"
+            android:layout_width="940dp"
+            android:layout_height="540dp" >
+
+            <SurfaceView
+                android:id="@+id/surface_main"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingTop="80dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/PreviewFrameRtmp"
+            android:layout_width="940dp"
+            android:layout_height="540dp" >
+
+            <!-- <io.vov.vitamio.widget.VideoView
+                android:id="@+id/rtmp_player"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingTop="80dp" /> -->
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lastviewed_favorite_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/videoSurfaceContainer"
+        android:background="@drawable/layout_shape"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qp_andr_navbr_icon" />
+
+        <TextView
+            android:id="@+id/options_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/options"
+            android:paddingLeft="8dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lastviewed_fav"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/lastviewed_favorite_layout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/videoSurfaceContainer"
+        android:background="@+drawable/layout_shape"
+        android:orientation="vertical" >
+
+        <com.ib.qezyplay.Utils.HorizontalListView
+            android:id="@+id/favorites_horizontal_list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" >
+        </com.ib.qezyplay.Utils.HorizontalListView>
+
+        <com.ib.qezyplay.Utils.HorizontalListView
+            android:id="@+id/recently_viewed_horizontal_list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" >
+        </com.ib.qezyplay.Utils.HorizontalListView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/adspace_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lastviewed_fav"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/videoSurfaceContainer"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/adspace"
+            android:layout_width="300dp"
+            android:layout_height="230dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/adspace"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/countries_categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/videoSurfaceContainer"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
+
+        <LinearLayout
+            android:id="@+id/countries"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/layout_shape"
+            android:orientation="horizontal" >
+
+            <com.ib.qezyplay.Utils.HorizontalListView
+                android:id="@+id/countries_listview"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <com.ib.qezyplay.Utils.HorizontalListView
+                android:id="@+id/categories_listview"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" >
+            </com.ib.qezyplay.Utils.HorizontalListView>
+        </LinearLayout>
+
+        <!--
+        <LinearLayout
+            android:id="@+id/categories"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_toRightOf="@+id/countries"
+            android:background="@drawable/layout_shape"
+            android:orientation="vertical"
+                >
+   
+        </LinearLayout>
+        -->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/channels"
+        android:layout_width="fill_parent"
+        android:layout_height="95dp"
+        android:layout_below="@+id/countries_categories"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="10dp"
+        android:background="@+drawable/layout_shape"
+        android:orientation="horizontal"
+        android:paddingTop="5dp" >
+
+        <com.ib.qezyplay.Utils.HorizontalListView
+            android:id="@+id/Channel_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/countries_categories"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/videoSurfaceContainer" >
+
+        <!--
+            <TextView
+                android:id="@+id/channel_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:paddingTop="2dp"
+                android:text="Channel Info"
+                android:textColor="#ffffff" />
+        -->
+        <!--
+            <ImageButton
+                android:id="@+id/channel_info_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/channel_info"
+                android:background="#000000"
+                android:padding="2dp"
+                android:src="@drawable/info_icon" />
+        -->
+
+        <ImageButton
+            android:id="@+id/add_to_favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#666666"
+            android:padding="2dp"
+            android:src="@drawable/add_icon" />
+
+        <ImageButton
+            android:id="@+id/twitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/add_to_favorites"
+            android:background="#666666"
+            android:padding="2dp"
+            android:src="@drawable/twitter_icon" />
+
+        <ImageButton
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/twitter"
+            android:background="#666666"
+            android:padding="2dp"
+            android:src="@drawable/fb_icon" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/copy_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="2dp"
+        android:paddingTop="2dp"
+        android:text="Qezy™media ©Copyright 2014 www.qezymedia.com"
+        android:textColor="#ffffff" />
+
+</RelativeLayout >
